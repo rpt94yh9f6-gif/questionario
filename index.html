@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Un pequeño y divertido modo de conocerte a mi manera...</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+:root {
+
+    --black: #080608;
+
+    --black-2: #11090d;
+
+    --wine-dark: #1a0710;
+
+    --wine: #641a34;
+
+    --wine-light: #8f304d;
+
+    --wine-bright: #bb526f;
+
+    --white: #faf3f6;
+
+    --soft: #d8c5cc;
+
+    --muted: #927985;
+
+    --border: rgba(187, 82, 111, 0.28);
+
+}
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(100, 26, 52, .30),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(143, 48, 77, .17),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--black),
+            var(--black-2),
+            #160910
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 15px;
+
+    overflow-x: hidden;
+
+}
+
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(187, 82, 111, .06);
+
+    filter: blur(90px);
+
+    top: -170px;
+
+    left: -120px;
+
+    pointer-events: none;
+
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(100, 26, 52, .10);
+
+    filter: blur(100px);
+
+    bottom: -170px;
+
+    right: -120px;
+
+    pointer-events: none;
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 760px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.card {
+
+    width: 100%;
+
+    padding: 45px;
+
+    border-radius: 28px;
+
+    background: rgba(14, 7, 11, .93);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+
+        0 25px 70px rgba(0, 0, 0, .60),
+
+        0 0 60px rgba(100, 26, 52, .10);
+
+    backdrop-filter: blur(16px);
+
+    animation: appear .7s ease;
+
+}
+
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.top-decoration {
+
+    text-align: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.heart {
+
+    display: inline-block;
+
+    font-size: 40px;
+
+    animation: heartbeat 1.8s infinite;
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    10% {
+
+        transform: scale(1.13);
+
+    }
+
+    20% {
+
+        transform: scale(1);
+
+    }
+
+    30% {
+
+        transform: scale(1.10);
+
+    }
+
+    40% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2rem, 5vw, 3.1rem);
+
+    line-height: 1.1;
+
+    text-align: center;
+
+    margin-bottom: 18px;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            #ffffff,
+            #dca3b5,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+.subtitle {
+
+    max-width: 590px;
+
+    margin: 0 auto 30px;
+
+    color: var(--soft);
+
+    text-align: center;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+}
+
+
+.name-section {
+
+    margin-bottom: 25px;
+
+}
+
+
+.name-section label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--soft);
+
+    font-size: 14px;
+
+}
+
+
+input {
+
+    width: 100%;
+
+    padding: 15px 17px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(187, 82, 111, .30);
+
+    background: rgba(255, 255, 255, .035);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .25s;
+
+}
+
+
+input:focus {
+
+    border-color: var(--wine-bright);
+
+    box-shadow:
+
+        0 0 0 3px rgba(187, 82, 111, .10);
+
+}
+
+
+input::placeholder {
+
+    color: #735f68;
+
+}
+
+
+.start-btn,
+.restart-btn {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--wine),
+            var(--wine-light)
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    box-shadow:
+
+        0 10px 30px rgba(100, 26, 52, .25);
+
+}
+
+
+.start-btn:hover,
+.restart-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+
+        0 15px 35px rgba(100, 26, 52, .35);
+
+}
+
+
+.start-btn:active,
+.restart-btn:active {
+
+    transform: scale(.98);
+
+}
+
+
+#quiz {
+
+    display: none;
+
+}
+
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+.progress-container {
+
+    width: 100%;
+
+    height: 6px;
+
+    margin-bottom: 35px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, .06);
+
+    overflow: hidden;
+
+}
+
+
+.progress-bar {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 50px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--wine),
+            var(--wine-bright)
+        );
+
+    transition: width .4s ease;
+
+}
+
+
+.question-number {
+
+    margin-bottom: 10px;
+
+    color: var(--wine-bright);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.question {
+
+    margin-bottom: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(1.5rem, 4vw, 2rem);
+
+    line-height: 1.4;
+
+}
+
+
+.options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.option {
+
+    width: 100%;
+
+    padding: 17px 18px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    background: rgba(255,255,255,.035);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+
+}
+
+
+.option:hover {
+
+    transform: translateX(5px);
+
+    background:
+
+        rgba(100,26,52,.18);
+
+    border-color:
+
+        rgba(187,82,111,.55);
+
+}
+
+
+.option.correct {
+
+    background:
+
+        rgba(60, 125, 82, .18);
+
+    border-color:
+
+        rgba(95,175,118,.65);
+
+}
+
+
+.option.incorrect {
+
+    background:
+
+        rgba(120,30,50,.25);
+
+    border-color:
+
+        rgba(190,60,90,.75);
+
+}
+
+
+.option:disabled {
+
+    cursor: default;
+
+}
+
+.feedback {
+
+    display: none;
+
+    min-height: 55px;
+
+    margin-top: 20px;
+
+    padding: 15px 17px;
+
+    border-radius: 14px;
+
+    border:
+
+        1px solid rgba(255,255,255,.07);
+
+    background:
+
+        rgba(255,255,255,.035);
+
+    color: var(--soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    animation:
+
+        feedbackIn .35s ease;
+
+}
+
+
+@keyframes feedbackIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.next-btn {
+
+    display: none;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    border:
+
+        1px solid rgba(187,82,111,.35);
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.next-btn:hover {
+
+    background:
+
+        rgba(100,26,52,.20);
+
+    border-color:
+
+        var(--wine-bright);
+
+}
+
+
+#result {
+
+    display: none;
+
+    text-align: center;
+
+}
+
+
+.result-title {
+
+    margin-bottom: 15px;
+
+    font-family:
+
+        "Playfair Display", serif;
+
+    font-size:
+
+        clamp(2rem,5vw,3rem);
+
+}
+
+
+.result-name {
+
+    margin-bottom: 10px;
+
+    color: var(--soft);
+
+    font-size: 15px;
+
+}
+
+
+.score-circle {
+
+    width: 155px;
+
+    height: 155px;
+
+    margin: 25px auto;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border:
+
+        2px solid rgba(187,82,111,.55);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(100,26,52,.35),
+            rgba(20,7,13,.85)
+        );
+
+    box-shadow:
+
+        0 0 45px rgba(100,26,52,.22);
+
+}
+
+
+.score-number {
+
+    font-family:
+
+        "Playfair Display", serif;
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+}
+
+
+.score-label {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.result-message {
+
+    margin-bottom: 25px;
+
+    color: var(--soft);
+
+    line-height: 1.75;
+
+}
+
+
+.history-title {
+
+    margin-top: 38px;
+
+    margin-bottom: 15px;
+
+    font-family:
+
+        "Playfair Display", serif;
+
+    font-size: 22px;
+
+    text-align: left;
+
+}
+
+
+.history {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.history-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 16px;
+
+    border-radius: 13px;
+
+    border:
+
+        1px solid rgba(255,255,255,.07);
+
+    background:
+
+        rgba(255,255,255,.035);
+
+    text-align: left;
+
+}
+
+
+.history-left strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+
+}
+
+
+.history-left span {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+.history-score {
+
+    color: var(--wine-bright);
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 15px;
+
+    }
+
+
+    .card {
+
+        padding: 28px 20px;
+
+        border-radius: 22px;
+
+    }
+
+
+    h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .question {
+
+        font-size: 1.45rem;
+
+    }
+
+
+    .option {
+
+        padding: 15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<section id="start">
+
+    <div class="top-decoration">
+
+        <span class="heart">
+            🖤
+        </span>
+
+    </div>
+
+
+    <h1>
+
+        Un pequeño y divertido
+        modo de conocerte a mi manera
+
+    </h1>
+
+
+    <p class="subtitle">
+
+        Porque aparentemente hacer preguntas normales
+        era demasiado aburrido. Así que prepárate,
+        responde con cuidado... algunas respuestas
+        podrían afectar nuestra relación. 😌
+
+    </p>
+
+
+    <div class="name-section">
+
+        <label for="name">
+
+            Primero dime cómo te llamas:
+
+        </label>
+
+
+        <input
+            type="text"
+            id="name"
+            maxlength="40"
+            placeholder="Escribe tu nombre..."
+        >
+
+    </div>
+
+
+    <button
+        class="start-btn"
+        onclick="startQuiz()"
+    >
+
+        Comenzar interrogatorio 
+
+    </button>
+
+</section>
+
+
+<section id="quiz">
+
+
+    <div class="progress-info">
+
+        <span id="progressText">
+
+            Pregunta 1 de 7
+
+        </span>
+
+
+        <span id="scoreText">
+
+            0 puntos
+
+        </span>
+
+    </div>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="progressBar"
+        ></div>
+
+    </div>
+
+
+    <div
+        class="question-number"
+        id="questionNumber"
+    >
+
+        Pregunta 01
+
+    </div>
+
+
+    <h2
+        class="question"
+        id="question"
+    ></h2>
+
+
+    <div
+        class="options"
+        id="options"
+    ></div>
+
+
+    <div
+        class="feedback"
+        id="feedback"
+    ></div>
+
+
+    <button
+        class="next-btn"
+        id="nextBtn"
+        onclick="nextQuestion()"
+    >
+
+        Siguiente →
+
+    </button>
+
+
+</section>
+
+
+<section id="result">
+
+
+    <div class="top-decoration">
+
+        <span class="heart">
+
+            🖤
+
+        </span>
+
+    </div>
+
+
+    <h2
+        class="result-title"
+        id="resultTitle"
+    >
+
+        Resultado
+
+    </h2>
+
+
+    <p
+        class="result-name"
+        id="resultName"
+    ></p>
+
+
+    <div class="score-circle">
+
+        <span
+            class="score-number"
+            id="finalScore"
+        >
+
+            0/7
+
+        </span>
+
+
+        <span class="score-label">
+
+            puntuación
+
+        </span>
+
+    </div>
+
+
+    <p
+        class="result-message"
+        id="resultMessage"
+    ></p>
+
+
+    <div id="historySection">
+
+
+        <h3 class="history-title">
+
+            Tus intentos
+
+        </h3>
+
+
+        <div
+            class="history"
+            id="history"
+        ></div>
+
+
+    </div>
+
+
+    <button
+        class="restart-btn"
+        onclick="restartQuiz()"
+    >
+
+        Volver a intentarlo ♡
+
+    </button>
+
+
+</section>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+const questions = [
+
+
+
+{
+
+    question:
+        "Si me clonaran igualita pero al clon le quitaran todas las cosas que te molestan de mí... ¿a quién elegirías?",
+
+    answers: [
+
+        {
+
+            text:
+                "A ti, obviamente. ",
+
+            correct:
+                true,
+
+            feedback:
+                "Más te vale.  Aunque me encanta que hayas tenido que pensarlo... ya me estás haciendo dudar de ti y apenas vamos empezando. 💀"
+
+        },
+
+
+        {
+
+            text:
+                "A mi clon.",
+
+            correct:
+                false,
+
+            feedback:
+                "JAJAJA perfecto. Entonces sí tengo defectos y encima prefieres una versión mía sin ellos. Qué manera tan rápida de arruinarlo todo. 😐💀"
+
+        }
+
+    ]
+
+},
+
+
+
+{
+
+    question:
+        "Si una ex te pidiera un abrazo por 'nostalgia', ¿qué harías?",
+
+    answers: [
+
+        {
+
+            text:
+                "No, claro que no. Wuákala.",
+
+            correct:
+                true,
+
+            feedback:
+                "Eso quería escuchar.  Aunque qué miedo que la respuesta correcta sea literalmente 'wuákala'. ¿Quién te enseñó a sobrevivir? 💅🏻"
+
+        },
+
+
+        {
+
+            text:
+                "Pues sí, tampoco pasa nada.",
+
+            correct:
+                false,
+
+            feedback:
+                "¿Tampoco pasa nada?  Claro que pasa algo. Pasa que acabas de conseguirte una discusión gratis que nadie te pidió. Felicidades. 💀"
+
+        }
+
+    ]
+
+},
+
+
+
+{
+
+    question:
+        "Una bruja te dice que tu alma gemela definitivamente NO soy yo. ¿Qué haces?",
+
+    answers: [
+
+        {
+
+            text:
+                "No le creo. Esa bruja está loca. 😌",
+
+            correct:
+                true,
+
+            feedback:
+                "Correcto. Porque evidentemente yo voy a creer más en una bruja desempleada que en ti. 🔮 Pero bien, por esta ocasión te salvaste. 😌"
+
+        },
+
+
+        {
+
+            text:
+                "Pues si no lo eres, tendré que aceptarlo.",
+
+            correct:
+                false,
+
+            feedback:
+                "¿ACEPTARLO? 😐 Qué rápido te rindes. Ni siquiera luchaste por mí. La bruja ni te conocía y ya le creíste. Increíble. 💀"
+
+        }
+
+    ]
+
+},
+
+
+
+{
+
+    question:
+        "Si tuvieras que elegir entre tu ex y yo después de una pelea fuerte, ¿a quién elegirías?",
+
+    answers: [
+
+        {
+
+            text:
+                "A ti, obvio, hermosa. ❤️",
+
+            correct:
+                true,
+
+            feedback:
+                "Más te vale. 😌 Y no lo digas con tanta seguridad porque todavía estoy evaluando si realmente te creo. 👀"
+
+        },
+
+
+        {
+
+            text:
+                "Ni en pedo.",
+
+            correct:
+                false,
+
+            feedback:
+                "Perfecto. Gracias por ahorrarme años de terapia y descubrirlo ahora. 🧍🏻‍♀️💀"
+
+        },
+
+
+        {
+
+            text:
+                "Están igual.",
+
+            correct:
+                false,
+
+            feedback:
+                "¿IGUALES? 😐 Qué interesante manera de decirme que quieres dormir en el sillón. Espero que tengas una cobija. 💀"
+
+        }
+
+    ]
+
+},
+
+
+
+{
+
+    question:
+        "Si tuvieras otra novia, ¿me serías infiel conmigo?",
+
+    answers: [
+
+        {
+
+            text:
+                "No.",
+
+            correct:
+                false,
+
+            feedback:
+                "¿No? Entonces explícame por qué tendrías otra novia. 😐 Yo pregunté una cosa y tú acabas de abrir otras cinco. Excelente trabajo. 💀"
+
+        },
+
+
+        {
+
+            text:
+                "Obvio sí. 😌",
+
+            correct:
+                false,
+
+            feedback:
+                "Ah bueno. Por lo menos eres sincero... aunque ahora entiendo por qué necesito hacer este cuestionario. 🚨💀"
+
+        },
+
+
+        {
+
+            text:
+                "¿Por qué estaría con alguien más?",
+
+            correct:
+                true,
+
+            feedback:
+                "Exactamente. 😌 Esa era la respuesta. Pero tampoco te emociones, contestaste bien UNA pregunta. Todavía faltan. 👀"
+
+        }
+
+    ]
+
+},
+
+
+
+{
+
+    question:
+        "Tu ex te escribe diciendo que necesita hablar contigo urgentemente. ¿Qué haces?",
+
+    answers: [
+
+        {
+
+            text:
+                "No. La ignoro.",
+
+            correct:
+                true,
+
+            feedback:
+                "Bien. 😌 Una respuesta correcta y todavía conservas tu dignidad. No sé cuánto vaya a durar eso, pero disfrútalo. 💅🏻"
+
+        },
+
+
+        {
+
+            text:
+                "Pues a lo mejor la puedo ayudar.",
+
+            correct:
+                false,
+
+            feedback:
+                "NO. 😐 No eres la Cruz Roja, no eres terapeuta y definitivamente no eres su novio. ¿Por qué quieres meterte ahí? 🚨💀"
+
+        }
+
+    ]
+
+},
+
+
+
+{
+
+    question:
+        "Estoy a punto de morir y la única forma de salvarme es que beses a 20 mujeres. ¿Qué haces?",
+
+    answers: [
+
+        {
+
+            text:
+                "Las beso para salvarte. ❤️",
+
+            correct:
+                false,
+
+            feedback:
+                "¿¿¿LAS BESAS??? 😐 A VER. Sí, técnicamente me salvaste la vida... PERO AHORA EXPLÍCAME POR QUÉ TE TUVISTE QUE BESAR A 20. Una por una. 💀❤️"
+
+        },
+
+
+        {
+
+            text:
+                "Te dejo morir. 😔",
+
+            correct:
+                false,
+
+            feedback:
+                "AHHH. 😐 Entonces prefieres que muera antes que besar a 20 mujeres. Qué romántico... supongo. Aunque sinceramente tampoco sé qué me preocupa más: tu respuesta o que hayas tenido que elegir. 💀"
+
+        }
+
+    ]
+
+}
+
+];
+
+
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let playerName = "";
+
+let answered = false;
+
+
+
+const startScreen =
+    document.getElementById("start");
+
+const quizScreen =
+    document.getElementById("quiz");
+
+const resultScreen =
+    document.getElementById("result");
+
+const questionElement =
+    document.getElementById("question");
+
+const questionNumberElement =
+    document.getElementById("questionNumber");
+
+const optionsElement =
+    document.getElementById("options");
+
+const feedbackElement =
+    document.getElementById("feedback");
+
+const nextButton =
+    document.getElementById("nextBtn");
+
+const progressBar =
+    document.getElementById("progressBar");
+
+const progressText =
+    document.getElementById("progressText");
+
+const scoreText =
+    document.getElementById("scoreText");
+
+const nameInput =
+    document.getElementById("name");
+
+
+function startQuiz() {
+
+    playerName =
+        nameInput.value.trim();
+
+
+    if (playerName === "") {
+
+        alert(
+            "Primero escribe tu nombre 😌"
+        );
+
+        nameInput.focus();
+
+        return;
+
+    }
+
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    answered = false;
+
+
+    startScreen.style.display =
+        "none";
+
+    resultScreen.style.display =
+        "none";
+
+    quizScreen.style.display =
+        "block";
+
+
+    loadQuestion();
+
+}
+
+
+
+function loadQuestion() {
+
+    answered = false;
+
+
+    const current =
+        questions[currentQuestion];
+
+
+    questionElement.textContent =
+        current.question;
+
+
+    questionNumberElement.textContent =
+        `Pregunta ${String(
+            currentQuestion + 1
+        ).padStart(2, "0")}`;
+
+
+    progressText.textContent =
+        `Pregunta ${
+            currentQuestion + 1
+        } de ${
+            questions.length
+        }`;
+
+
+    scoreText.textContent =
+        `${score} ${
+            score === 1
+                ? "punto"
+                : "puntos"
+        }`;
+
+
+    const progress =
+        (
+            currentQuestion /
+            questions.length
+        ) * 100;
+
+
+    progressBar.style.width =
+        `${progress}%`;
+
+
+    optionsElement.innerHTML =
+        "";
+
+
+    feedbackElement.style.display =
+        "none";
+
+
+    feedbackElement.textContent =
+        "";
+
+
+    nextButton.style.display =
+        "none";
+
+
+    current.answers.forEach(
+        (answer, index) => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "option";
+
+
+            button.textContent =
+                answer.text;
+
+
+            button.onclick =
+                function() {
+
+                    selectAnswer(
+                        index,
+                        button
+                    );
+
+                };
+
+
+            optionsElement.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+
+function selectAnswer(
+    selectedIndex,
+    selectedButton
+) {
+
+    if (answered) {
+
+        return;
+
+    }
+
+
+    answered = true;
+
+
+    const current =
+        questions[currentQuestion];
+
+
+    const selectedAnswer =
+        current.answers[
+            selectedIndex
+        ];
+
+
+    const buttons =
+        document.querySelectorAll(
+            ".option"
+        );
+
+
+    buttons.forEach(
+        (button, index) => {
+
+            button.disabled =
+                true;
+
+
+            if (
+                current.answers[index]
+                    .correct
+            ) {
+
+                button.classList.add(
+                    "correct"
+                );
+
+            }
+
+        }
+    );
+
+
+    if (
+        selectedAnswer.correct
+    ) {
+
+        score++;
+
+
+        selectedButton.classList.add(
+            "correct"
+        );
+
+    } else {
+
+        selectedButton.classList.add(
+            "incorrect"
+        );
+
+    }
+
+
+    feedbackElement.textContent =
+        selectedAnswer.feedback;
+
+
+    feedbackElement.style.display =
+        "block";
+
+
+    scoreText.textContent =
+        `${score} ${
+            score === 1
+                ? "punto"
+                : "puntos"
+        }`;
+
+
+    const progress =
+        (
+            (currentQuestion + 1) /
+            questions.length
+        ) * 100;
+
+
+    progressBar.style.width =
+        `${progress}%`;
+
+
+    if (
+        currentQuestion ===
+        questions.length - 1
+    ) {
+
+        nextButton.textContent =
+            "Ver mi resultado ♡";
+
+    } else {
+
+        nextButton.textContent =
+            "Siguiente →";
+
+    }
+
+
+    nextButton.style.display =
+        "block";
+
+}
+
+
+
+function nextQuestion() {
+
+    if (!answered) {
+
+        return;
+
+    }
+
+
+    currentQuestion++;
+
+
+    if (
+        currentQuestion >=
+        questions.length
+    ) {
+
+        finishQuiz();
+
+        return;
+
+    }
+
+
+    loadQuestion();
+
+}
+
+
+
+function finishQuiz() {
+
+    quizScreen.style.display =
+        "none";
+
+
+    resultScreen.style.display =
+        "block";
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent =
+        `${score}/${questions.length}`;
+
+
+    document.getElementById(
+        "resultName"
+    ).textContent =
+        `Resultado de ${playerName}`;
+
+
+    document.getElementById(
+        "resultTitle"
+    ).textContent =
+        getResultTitle();
+
+
+    document.getElementById(
+        "resultMessage"
+    ).textContent =
+        getResultMessage();
+
+
+    saveAttempt();
+
+
+    showHistory();
+
+}
+
+
+
+function getResultTitle() {
+
+    if (score === 6) {
+
+        return "Casi perfecto... 👀";
+
+    }
+
+
+    if (score === 5) {
+
+        return "Bueno... sobreviviste. 😌";
+
+    }
+
+
+    if (score >= 3) {
+
+        return "Tenemos que hablar. 🙂";
+
+    }
+
+
+    return "🚨 PROBLEMA SERIO 🚨";
+
+}
+
+
+
+function getResultMessage() {
+
+    if (score === 6) {
+
+        return (
+            `${playerName}, 6/7. ` +
+
+            `Contestaste prácticamente todo bien, ` +
+
+            `pero llegaste a la última pregunta ` +
+
+            `y descubriste la verdad más importante: ` +
+
+            `NO EXISTÍA UNA RESPUESTA CORRECTA. ` +
+
+            `Felicidades, caíste en mi trampa. 💀🖤`
+        );
+
+    }
+
+
+    if (score === 5) {
+
+        return (
+            `${playerName}, 5/7. ` +
+
+            `No estuvo terrible... ` +
+
+            `aunque hubo respuestas que definitivamente ` +
+
+            `voy a recordar durante mucho tiempo. 👀`
+        );
+
+    }
+
+
+    if (score >= 3) {
+
+        return (
+            `${playerName}, ${score}/7. ` +
+
+            `Tenemos que hablar seriamente ` +
+
+            `sobre algunas de tus decisiones. ` +
+
+            `No voy a decir cuáles... ` +
+
+            `pero tú sabes perfectamente cuáles. 🙂`
+        );
+
+    }
+
+
+    return (
+        `${playerName}, ${score}/7. ` +
+
+        `No sé qué esperaba encontrar haciendo este ` +
+
+        `cuestionario, pero definitivamente no esperaba ` +
+
+        `tener que reconsiderar nuestra relación. 🚨💀`
+    );
+
+}
+
+
+
+function getHistory() {
+
+    try {
+
+        const saved =
+            localStorage.getItem(
+                "quizHistory"
+            );
+
+
+        if (!saved) {
+
+            return [];
+
+        }
+
+
+        const history =
+            JSON.parse(saved);
+
+
+        if (!Array.isArray(history)) {
+
+            return [];
+
+        }
+
+
+        return history;
+
+    } catch (error) {
+
+        console.error(
+            "Error leyendo historial:",
+            error
+        );
+
+
+        return [];
+
+    }
+
+}
+
+
+
+function saveAttempt() {
+
+    const history =
+        getHistory();
+
+
+    const attempt = {
+
+        name:
+            playerName,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        date:
+            new Date().toLocaleString(
+                "es-MX",
+                {
+                    dateStyle:
+                        "medium",
+
+                    timeStyle:
+                        "short"
+                }
+            )
+
+    };
+
+
+    history.push(
+        attempt
+    );
+
+
+    try {
+
+        localStorage.setItem(
+            "quizHistory",
+            JSON.stringify(history)
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Error guardando historial:",
+            error
+        );
+
+    }
+
+}
+
+
+
+function showHistory() {
+
+    const historyContainer =
+        document.getElementById(
+            "history"
+        );
+
+
+    const history =
+        getHistory();
+
+
+    historyContainer.innerHTML =
+        "";
+
+
+    if (history.length === 0) {
+
+        historyContainer.innerHTML =
+            `
+            <p style="color:#927985;">
+                Todavía no hay intentos.
+            </p>
+            `;
+
+        return;
+
+    }
+
+
+    const reversed =
+        [...history].reverse();
+
+
+    reversed.forEach(
+        (attempt) => {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "history-item";
+
+
+            const left =
+                document.createElement(
+                    "div"
+                );
+
+
+            left.className =
+                "history-left";
+
+
+            const name =
+                document.createElement(
+                    "strong"
+                );
+
+
+            name.textContent =
+                attempt.name;
+
+
+            const date =
+                document.createElement(
+                    "span"
+                );
+
+
+            date.textContent =
+                attempt.date;
+
+
+            left.appendChild(
+                name
+            );
+
+
+            left.appendChild(
+                date
+            );
+
+
+            const scoreElement =
+                document.createElement(
+                    "div"
+                );
+
+
+            scoreElement.className =
+                "history-score";
+
+
+            scoreElement.textContent =
+                `${attempt.score}/${attempt.total}`;
+
+
+            item.appendChild(
+                left
+            );
+
+
+            item.appendChild(
+                scoreElement
+            );
+
+
+            historyContainer.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    answered = false;
+
+
+    resultScreen.style.display =
+        "none";
+
+
+    quizScreen.style.display =
+        "block";
+
+
+    loadQuestion();
+
+}
+
+</script>
+
+
+</body>
+</html>
